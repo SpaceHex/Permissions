@@ -13,9 +13,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class Main extends JavaPlugin implements Listener {
 	public FileConfiguration config = getConfig();
-
+	private static Plugin plugin;
 	@Override
 	public void onEnable() {
+		plugin = this;
 		getServer().getPluginManager().registerEvents(this, this); 
 		registerEvents(this,new PlayerChat());
 		config.addDefault("server-name","My Server");
@@ -28,6 +29,7 @@ public class Main extends JavaPlugin implements Listener {
 	
 	@Override
 	public void onDisable() {
+		plugin = null;
 		getLogger().info(ChatColor.RED + "Plugin disabled!");
 	}
 	
@@ -38,19 +40,8 @@ public class Main extends JavaPlugin implements Listener {
                                         .registerEvents(listener, plugin);                                               
                 }                                                                                                        
         } 
-//     @Override
-//     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-//         if(commandLabel.equalsIgnoreCase("help")) {
-		
-//             //Defines Variables
-// //             Player p = (Player) sender;
-
-//             //Send message
-            
-//         } else if(commandLabel.equalsIgnoreCase("report")) {
-// 		//report command logic
-//         }
-//         return false;
-//     }
+	public static Plugin getPlugin() {
+		return plugin;
+	}
 	
 }
