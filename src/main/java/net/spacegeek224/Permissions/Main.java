@@ -24,7 +24,8 @@ public class Main extends JavaPlugin implements Listener {
 		config.options().copyDefaults(true);
 		saveConfig();
 		getLogger().info(ChatColor.GREEN + "Plugin enabled!");
-		getCommand("help").setExecutor(new CommandHelp()); 
+		// getCommand("help").setExecutor(new CommandHelp()); 
+		getCommand("perm").setExecutor(new CommandPerm()); 
 
 	}
 	
