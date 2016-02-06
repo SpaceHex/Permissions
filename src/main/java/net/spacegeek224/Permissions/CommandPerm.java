@@ -19,9 +19,13 @@ public class CommandPerm implements CommandExecutor {
                 //Player player = (Player) sender;
                 if (args.length == 0) {
                         
-                } else if (args.length == 2) {
-                  Player target = getPlayer(args[0]);
-                  target.sendMessage("Someone says " + args[1]);
+                } else if (args.length == 4) {
+                        if (args[0] == "user") {
+                                if (args[2] == "add") {
+                                        PermissionAttachment attachment = getPlayer(args[1]).addAttachment(Main.getPlugin());
+                                        attachment.addPermission(args[3],true);
+                                }
+                        }
                   
                 }
                 return true;                                                                                            
