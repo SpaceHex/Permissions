@@ -18,7 +18,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void onEnable() {
 		plugin = this;
 		getServer().getPluginManager().registerEvents(this, this); 
-		registerEvents(this,new PlayerChat());
+		registerEvents(this,new PlayerJoin());
 		config.addDefault("server-name","My Server");
 		config.options().copyDefaults(true);
 		saveConfig();
