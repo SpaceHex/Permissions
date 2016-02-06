@@ -29,6 +29,12 @@ public class CommandPerm implements CommandExecutor {
         public Player getPlayer(String s) {
              for (Player p1:Bukkit.getServer().getOnlinePlayers()) {
                      Bukkit.getLogger().info(p1.getDisplayName());
+                     if (p1.getDisplayName() == s) {
+                       return p1;
+                     } else {
+                       return Bukkit.getServer().getPlayer(s);
+                     }
              }   
+             
         }                                                                                                              
 }  
