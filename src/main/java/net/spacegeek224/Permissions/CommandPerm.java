@@ -15,8 +15,9 @@ public class CommandPerm implements CommandExecutor {
                 if (args.length == 0) {
                         
                 } else if (args.length == 2) {
-                  Player player = Bukkit.getPlayer(args[1]);
-                  player.sendMessage("Hi.");
+                  @SuppressWarnings("deprecation")
+                  Player target = Bukkit.getServer().getPlayer(args[0]);
+                  target.sendMessage("Hi, from " + args[1]);
                 }
                 return true;                                                                                            
         }                                                                                                                
