@@ -23,10 +23,11 @@ public class CommandPerm implements CommandExecutor {
                 }
                 return true;                                                                                            
         }          
-        Player getPlayerByName(String playerName) {
+      Player getPlayerByName(String playerName) {
+          Player[] players = Bukkit.getServer().getOnlinePlayers().toArray();
         Player playerToReturn = null;
-        for(int i = 0; i < Bukkit.getServer().getOnlinePlayers().size(); i++) {
-            if(Bukkit.getServer().getOnlinePlayers().get(i).getName().equalsIgnoreCase(playerName)) {
+        for(int i = 0; i < players.length; i++) {
+            if(players[i].getName().equalsIgnoreCase(playerName)) {
                 playerToReturn = Bukkit.getServer().getOnlinePlayers().get(i);
                 break;
             }
@@ -36,9 +37,9 @@ public class CommandPerm implements CommandExecutor {
  
     OfflinePlayer getOfflinePlayerByName(String playerName) {
         OfflinePlayer playerToReturn = null;
-        for(int i = 0; i < Bukkit.getServer().getOfflinePlayers().size(); i++) {
-            if(Bukkit.getServer().getOfflinePlayers().get(i).getName().equalsIgnoreCase(playerName)) {
-                playerToReturn = Bukkit.getServer().getOfflinePlayers().get(i);
+        for(int i = 0; i < Bukkit.getServer().getOfflinePlayers().length; i++) {
+            if(Bukkit.getServer().getOfflinePlayers()[i].getName().equalsIgnoreCase(playerName)) {
+                playerToReturn = Bukkit.getServer().getOfflinePlayers()[i];
                 break;
             }
         }
