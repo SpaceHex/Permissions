@@ -1,0 +1,9 @@
+name: Permissions
+main: net.spacegeek224.Permissions.Main
+version: 0.0.5
+author: spacegeek224
+commands:
+  help:
+    description: Get helps
+    usage: /help [topic]
+    permission: shn.help
