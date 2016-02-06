@@ -17,5 +17,7 @@ public class PlayerJoin implements Listener {
   public void onPlayerJoin(PlayerJoinEvent event) {
     Player player = event.getPlayer();
     PermissionAttachment attachment = player.addAttachment(net.spacegeek224.Permissions.Main.getPlugin());
+    attachment.setPermission("rank.admin",false);
+    attachment.setPermission("rank.mod",true);
   }
 }
