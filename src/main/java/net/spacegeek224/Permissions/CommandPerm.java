@@ -20,8 +20,8 @@ public class CommandPerm implements CommandExecutor {
                 if (args.length == 0) {
                         
                 } else if (args.length == 2) {
-                //   Player target = getPlayerByName(args[0]);
-                //   target.sendMessage("Someone says " + args[1]);
+                  Player target = getPlayer(args[0]);
+                  target.sendMessage("Someone says " + args[1]);
                   
                 }
                 return true;                                                                                            
