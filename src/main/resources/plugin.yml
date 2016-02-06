@@ -3,7 +3,7 @@ main: net.spacegeek224.Permissions.Main
 version: 0.0.5
 author: spacegeek224
 commands:
-  help:
+  perm:
     description: Get helps
-    usage: /help [topic]
-    permission: shn.help
+    usage: /perm <args>
+    permission: shn.perms
