@@ -20,34 +20,11 @@ public class CommandPerm implements CommandExecutor {
                 if (args.length == 0) {
                         
                 } else if (args.length == 2) {
-                  @SuppressWarnings("deprecation")
-                  Player target = getPlayerByName(args[0]);
-                  target.sendMessage("Someone says " + args[1]);
+                //   Player target = getPlayerByName(args[0]);
+                //   target.sendMessage("Someone says " + args[1]);
                   
                 }
                 return true;                                                                                            
-        }          
-      Player getPlayerByName(String playerName) {
-         List<Player> players = Arrays.asList(Bukkit.getServer().getOnlinePlayers());
-        Player playerToReturn = null;
-        for(int i = 0; i < players.size(); i++) {
-            if(players[i].getName().equalsIgnoreCase(playerName)) {
-                playerToReturn = players[i];
-                break;
-            }
         }
-        return playerToReturn;
-    }
- 
-    OfflinePlayer getOfflinePlayerByName(String playerName) {
-        OfflinePlayer playerToReturn = null;
-        for(int i = 0; i < Bukkit.getServer().getOfflinePlayers().length; i++) {
-            if(Bukkit.getServer().getOfflinePlayers()[i].getName().equalsIgnoreCase(playerName)) {
-                playerToReturn = Bukkit.getServer().getOfflinePlayers()[i];
-                break;
-            }
-        }
-        return playerToReturn;
-    }
                                                                                                                          
 }  
