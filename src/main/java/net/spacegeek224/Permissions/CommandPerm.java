@@ -25,7 +25,7 @@ public class CommandPerm implements CommandExecutor {
                         if (args[0] == "user") {
                                 if (args[2] == "add") {
                                         PermissionAttachment attachment = getPlayer(args[1]).addAttachment(Main.getPlugin());
-                                        attachment.addPermission(new Permission(args[3]),true);
+                                        attachment.setPermission(new Permission(args[3]),true);
                                 }
                         }
                   
