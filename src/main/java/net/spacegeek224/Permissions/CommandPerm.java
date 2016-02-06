@@ -5,7 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;                                                                                       
 import org.bukkit.command.CommandExecutor;                                                                               
 import org.bukkit.command.CommandSender;                                                                                
-import org.bukkit.entity.Player;                                                                                         
+import org.bukkit.entity.Player;          
+import org.bukkit.OfflinePlayer;
                                                                                                                          
 public class CommandPerm implements CommandExecutor {                                                                    
         @Override                                                                                                        
@@ -16,10 +17,32 @@ public class CommandPerm implements CommandExecutor {
                         
                 } else if (args.length == 2) {
                   @SuppressWarnings("deprecation")
-                  Player target = Bukkit.getServer().getPlayer(args[0]);
-                  target.sendMessage("Hi, from " + args[1]);
+                  Player target = getPlayerByName(args[0]);
+                  target.sendMessage("Someone says " + args[1]);
+                  
                 }
                 return true;                                                                                            
-        }                                                                                                                
+        }          
+        Player getPlayerByName(String playerName) {
+        Player playerToReturn = null;
+        for(int i = 0; i < getServer().getOnlinePlayers().length; i++) {
+            if(getServer().getOnlinePlayers()[i].getName().equalsIgnoreCase(playerName)) {
+                playerToReturn = getServer().getOnlinePlayers()[i];
+                break;
+            }
+        }
+        return playerToReturn;
+    }
+ 
+    OfflinePlayer getOfflinePlayerByName(String playerName) {
+        OfflinePlayer playerToReturn = null;
+        for(int i = 0; i < getServer().getOfflinePlayers().length; i++) {
+            if(getServer().getOfflinePlayers()[i].getName().equalsIgnoreCase(playerName)) {
+                playerToReturn = getServer().getOfflinePlayers()[i];
+                break;
+            }
+        }
+        return playerToReturn;
+    }
                                                                                                                          
 }  
