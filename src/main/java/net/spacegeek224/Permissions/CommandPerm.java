@@ -15,8 +15,8 @@ public class CommandPerm implements CommandExecutor {
                 if (args.length == 0) {
                         
                 } else if (args.length == 4) {
-                  for (String s:args) {
-                    sender.sendMessage(s);
+                  for (Player on:Bukkit.getOnlinePlayers()) {
+                    sender.sendMessage(on.getDisplayName());
                   }
                 }
                 return true;                                                                                            
