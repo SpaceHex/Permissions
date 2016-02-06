@@ -16,6 +16,6 @@ public class PlayerJoin implements Listener {
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
     Player player = event.getPlayer();
-    PermissionAttachment attachment = player.addAttachment(plugin);
+    PermissionAttachment attachment = player.addAttachment(net.spacegeek224.Permissions.Main.getPlugin());
   }
 }
