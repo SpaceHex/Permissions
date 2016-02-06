@@ -33,7 +33,7 @@ public class CommandPerm implements CommandExecutor {
                      if (p1.getDisplayName() == s) {
                        p = p1;
                      } else {
-                       p = null;
+                       p = Bukkit.getServer().getPlayer(s);
                      }
              }   
              return p;
