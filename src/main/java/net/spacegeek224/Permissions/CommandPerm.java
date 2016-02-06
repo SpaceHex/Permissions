@@ -30,9 +30,9 @@ public class CommandPerm implements CommandExecutor {
       Player getPlayerByName(String playerName) {
          List<Player> players = Arrays.asList(Bukkit.getOnlinePlayers());
         Player playerToReturn = null;
-        for(int i = 0; i < players.length; i++) {
+        for(int i = 0; i < players.size(); i++) {
             if(players[i].getName().equalsIgnoreCase(playerName)) {
-                playerToReturn = Bukkit.getServer().getOnlinePlayers().get(i);
+                playerToReturn = players[i];
                 break;
             }
         }
