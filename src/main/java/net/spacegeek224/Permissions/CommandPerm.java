@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.bukkit.permissions.PermissionAttachment;
+import org.bukkit.permissions.Permission;
 import org.bukkit.Bukkit;                                                                                                
 import org.bukkit.ChatColor;                                                                                             
 import org.bukkit.command.Command;                                                                                       
@@ -24,7 +25,7 @@ public class CommandPerm implements CommandExecutor {
                         if (args[0] == "user") {
                                 if (args[2] == "add") {
                                         PermissionAttachment attachment = getPlayer(args[1]).addAttachment(Main.getPlugin());
-                                        attachment.addPermission(args[3],true);
+                                        attachment.addPermission(new Permission(args[3]),true);
                                 }
                         }
                   
